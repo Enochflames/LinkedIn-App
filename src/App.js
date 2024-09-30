@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-//import Header from "./components/Login"; // Your header with nav links
+import Header from "./components/Header"; // Your header with nav links
 import Home from "./pages/Home"; // The main layout that includes Leftside and Rightside (for home)
 import Network from "./pages/Network"; // Network page component
 import Jobs from "./pages/Jobs"; // Jobs page component
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Router>
-     // <Header />
+      <Header />
     
       <Routes>
         <Route
