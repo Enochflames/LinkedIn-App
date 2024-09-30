@@ -11,8 +11,10 @@ function App() {
 
   return (
     <Router>
-      <Header />
+    //  <Header />
+    
       <Routes>
+  <Route path="/login" element={<Login setUsername={setUsername} />} />
         <Route
           path="/home"
           element={<Home username={username} showRightside={true} />}
