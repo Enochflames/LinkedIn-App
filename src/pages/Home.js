@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../components/Header"; // Your header component
 import Leftside from "../components/Leftside"; // Your left-side content
 import Main from "../components/Main"; // Main content that dynamically changes
 import Rightside from "../components/Rightside"; // Rightside only for the home route
@@ -27,15 +28,18 @@ function Home({ username, showRightside, content }) {
   }
 
   return (
-    <Container>
-      <Layout>
-        <Leftside /> {/* Left side stays constant */}
-        <MainContentWrapper>
-          {MainContent}
-        </MainContentWrapper>
-        {showRightside && <Rightside />} {/* Rightside is shown only on the home page */}
-      </Layout>
-    </Container>
+    <>
+      <Header /> {/* Include the header here */}
+      <Container>
+        <Layout>
+          <Leftside /> {/* Left side stays constant */}
+          <MainContentWrapper>
+            {MainContent}
+          </MainContentWrapper>
+          {showRightside && <Rightside />} {/* Rightside is shown only on the home page */}
+        </Layout>
+      </Container>
+    </>
   );
 }
 
@@ -51,7 +55,6 @@ const Layout = styled.div`
 const MainContentWrapper = styled.div`
   flex: 1;
   padding: 0 20px;
-  
 `;
 
 export default Home;
